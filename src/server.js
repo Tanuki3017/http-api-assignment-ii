@@ -25,8 +25,7 @@ const urlStruct = {
 const parseBody = (request, response, handler) => {
   const body = [];
 
-  request.on('error', (err) => {
-    console.dir(err);
+  request.on('error', () => {
     response.statusCode = 400;
     response.end();
   });
